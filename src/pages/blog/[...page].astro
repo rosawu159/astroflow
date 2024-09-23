@@ -47,7 +47,7 @@ const paginationProps = {
 
 <PageLayout meta={meta}>
 	<div class='w-full'>
-		<Button title='Back' href='/' style='button'>
+		<Button title='Back' href='/astroflow' style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
@@ -101,12 +101,12 @@ const paginationProps = {
 							<ul class='text-bgColor flex flex-wrap gap-2'>
 								{uniqueTags.map((tag) => (
 									<li>
-										<Button title={tag} href={`/tags/${tag}/`} style='pill' />
+										<Button title={tag} href={`/astroflow/tags/${tag}/`} style='pill' />
 									</li>
 								))}
 							</ul>
 							<span class='mt-4 block sm:text-end'>
-								<a aria-label='View all blog categories' class='' href='/tags/' data-astro-prefetch>
+								<a aria-label='View all blog categories' class='' href='/astroflow/tags/' data-astro-prefetch>
 									View all →
 								</a>
 							</span>
@@ -115,19 +115,5 @@ const paginationProps = {
 				</div>
 			)
 		}
-
-		<a
-			href='https://github.com/srleom/astro-theme-resume.git'
-			class='mt-16 inline-flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
-		>
-			<span class='relative flex items-center justify-center'>
-				<span
-					class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-				></span>
-				<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
-			</span>
-
-			<p class='font-medium'>Get free template</p>
-		</a>
 	</div>
 </PageLayout>

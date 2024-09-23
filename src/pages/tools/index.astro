@@ -57,7 +57,7 @@ const DEVELOPMENT = [
 
 <PageLayout meta={{ title: 'Home' }}>
 	<div class='w-full'>
-		<Button title='Back' href='/' style='button'>
+		<Button title='Back' href='/astroflow' style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
@@ -79,9 +79,9 @@ const DEVELOPMENT = [
 				<p>Tools and software I use daily</p>
 			</div>
 
-			<ToolSection title='Design' tools={DESIGN} />
-			<ToolSection title='Productivity' tools={PRODUCTIVITY} />
 			<ToolSection title='Development' tools={DEVELOPMENT} />
+			<ToolSection title='Productivity' tools={PRODUCTIVITY} />
+			<ToolSection title='Design' tools={DESIGN} />
 		</div>
 	</div>
 </PageLayout>
