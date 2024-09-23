@@ -12,10 +12,13 @@ import astro from '../assets/wu.jpg'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['lorem', 'ipsum']
-const frontend = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
-const backend = ['lorem', 'ipsum', 'lorem', 'ipsum']
-const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
+const languages = ['Mandarin', 'English']
+const programming = ['Python', 'C#']
+const frontend = ['React.js', 'Angular']
+const backend = ['.NET Core', '.NET Framework', 'Flask']
+const oscontainer = ['Docker', 'Unix', 'Openshift']
+const iac_cicd = ['Jenkins', 'Ansible']
+
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -28,12 +31,12 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<Image
 				src={astro}
 				alt='profile photo'
-				class='h-auto max-h-[18rem] w-auto rounded-full'
+				class='h-auto max-h-[18rem] w-auto rounded-full mb-4'
 				loading='eager'
 			/>
 
 			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-3xl font-bold'>Lorem ipsum dolor</h1>
+				<h1 class='text-3xl  font-bold'>Y. Wu</h1>
 				<a
 					href='https://github.com/srleom/astro-theme-resume.git'
 					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
@@ -48,7 +51,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					<p class='font-medium'>Get free template</p>
 				</a>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Lorem Ipsum'>
+					<Label title='Software Engineer | Fullstack Engineer'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -56,7 +59,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 							></path></svg
 						>
 					</Label>
-					<Label title='Ipsum'>
+					<Label title='Taipei, Taiwan'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -67,7 +70,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					<Label
 						title='Connect on Linkedin'
 						as='a'
-						href='https://www.linkedin.com/in/example/'
+						href='https://www.linkedin.com/in/ywu19ywu/'
 						target='_blank'
 					>
 						<svg
@@ -87,10 +90,18 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='About'>
 			<p class='text-muted-foreground'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia omnis
-				consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium laborum
-				odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet
-				consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+				As a user-focused software enthusiast, I am passionate about creating value with modern technology and optimizing customer needs.
+			</p>
+			<p class='text-muted-foreground'>
+				In the role of collaborative team player, I have leveraged my communication and problem-solving skills to engage with 
+				stakeholders and my team in identifying, diagnosing, and resolving potential issues, while developing robust automation solutions 
+				using Python and the Mobly testing framework. This approach has not only enhanced overall software reliability, but also 
+				strengthened our team's cohesiveness and productivity.
+			</p>
+			<p class='text-muted-foreground'>
+				Proficient in designing and implementing data pipelines for manufacturing forecasting through the utilization of MSSQL and event 
+				streaming solutions with C#. Demonstrated ability in developing scalable web applications by Angular and creating resilient APIs 
+				to enhance data processing and delivery.
 			</p>
 		</Section>
 		{
@@ -135,28 +146,18 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='Education'>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
+				heading='National Taiwan University of Science and Technology'
+				subheading='Bachelor Degree, Computer Science and Information Engineering'
+				date='Sep 2014 - Jun 2019'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-					</li>
+					<li>Developing an image recognition model for muscle atrophy prediction with Biomedical Engineering Lab</li>
+					<li>Real-time multi-object path recognition development with Industrial Management Lab</li>
+					<li>Using multithreading to detect fraud in e-commerce applications with Computer Science Lab</li>
 				</ul>
 			</Card>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			/>
 		</Section>
 
 		<Section title='Projects'>
@@ -203,9 +204,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='Skills'>
 			<SkillLayout title='Languages' skills={languages} />
+			<SkillLayout title='Programming' skills={programming} />
 			<SkillLayout title='Frontend' skills={frontend} />
 			<SkillLayout title='Backend' skills={backend} />
-			<SkillLayout title='Others' skills={others} />
+			<SkillLayout title='OS & Container' skills={oscontainer} />
+			<SkillLayout title='IaC & CI/CD' skills={iac_cicd} />
 		</Section>
 	</div>
 	<a
