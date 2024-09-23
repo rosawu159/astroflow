@@ -27,51 +27,53 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 <PageLayout meta={{ title: 'Home' }}>
 	<div class='flex w-full flex-col gap-y-14'>
-		<section class='flex flex-col items-center gap-y-2'>
-			<div class="flex flex-row items-start gap-x-6 gap-y-6 mb-4">
-				<div class="flex flex-col items-center ml-3">
-				  <Image
-					src={astro}
-					alt="profile photo"
-					class="h-auto max-h-[8rem] w-auto rounded-full mb-3"
-					loading="eager"
-				  />
-				  <h1 class="text-3xl font-bold">Y. Wu</h1>
+		<section class="flex flex-col items-center gap-y-8 sm:gap-y-2 gap-x-8 sm:px-6">
+			<!-- 圖片和名稱 -->
+			<div class="flex flex-col sm:flex-row items-center sm:items-start gap-x-2 sm:gap-x-6 mb-4">
+			  <div class="flex flex-col items-center gap-y-8 sm:gap-y-2">
+				<Image
+				  src={astro}
+				  alt="profile photo"
+				  class="h-auto max-h-[6rem] sm:max-h-[8rem] w-auto rounded-full mb-3"
+				  loading="eager"
+				/>
+				<h1 class="text-2xl sm:text-3xl font-bold">Y. Wu</h1>
+			  </div>
+		  
+			  <!-- 介紹內容 -->
+			  <div class="flex flex-col items-start gap-y-3 rounded-3xl border border-input px-4 py-4 text-xs sm:text-sm shadow-sm transition-all hover:shadow-md mt-4 sm:mt-0 ml-12">
+				<div class="flex items-center gap-x-2">
+				  <span class="relative flex items-center justify-center mr-1">
+					<span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
+					<span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+				  </span>
+				  <p class="font-medium">Full-stack developer in Python, C#, React.js, and Angular.</p>
 				</div>
-			  
-				<div class="flex flex-col items-start gap-y-3 rounded-3xl border border-input px-4 py-4 text-sm shadow-sm transition-all hover:shadow-md ml-12">
-				  <div class="flex items-center gap-x-2">
-					<span class="relative flex items-center justify-center mr-1">
-					  <span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
-					  <span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
-					</span>
-					<p class="font-medium">Full-stack developer in Python, C#, React.js, and Angular.</p>
-				  </div>
-				  <div class="flex items-center gap-x-2">
-					<span class="relative flex items-center justify-center mr-1">
-					  <span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
-					  <span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
-					</span>
-					<p class="font-medium">4 years of Web backend development experience.</p>
-				  </div>
-				  <div class="flex items-center gap-x-2">
-					<span class="relative flex items-center justify-center mr-1">
-					  <span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
-					  <span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
-					</span>
-					<p class="font-medium">2 years of Web frontend development experience.</p>
-				  </div>
-				  <div class="flex items-center gap-x-2">
-					<span class="relative flex items-center justify-center mr-1">
-					  <span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
-					  <span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
-					</span>
-					<p class="font-medium">
-					  Active practitioner in tech communities, such as Cloud Native's<br>
-					  glossary and Women in Data Science Taipei.
-					</p>
-				  </div>
+				<div class="flex items-center gap-x-2">
+				  <span class="relative flex items-center justify-center mr-1">
+					<span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
+					<span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+				  </span>
+				  <p class="font-medium">4 years of Web backend development experience.</p>
 				</div>
+				<div class="flex items-center gap-x-2">
+				  <span class="relative flex items-center justify-center mr-1">
+					<span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
+					<span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+				  </span>
+				  <p class="font-medium">2 years of Web frontend development experience.</p>
+				</div>
+				<div class="flex items-center gap-x-2">
+				  <span class="relative flex items-center justify-center mr-1">
+					<span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
+					<span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+				  </span>
+				  <p class="font-medium">
+					Active practitioner in tech communities, such as Cloud Native's<br>
+					glossary and Women in Data Science Taipei.
+				  </p>
+				</div>
+			  </div>
 			</div>
 			<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
 				<Label title='Software Engineer | Fullstack Engineer'>
@@ -209,7 +211,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<SkillLayout title='OS & Container' skills={oscontainer} />
 			<SkillLayout title='IaC & CI/CD' skills={iac_cicd} />
 		</Section>
-		
+
 		<Section title='Projects'>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
