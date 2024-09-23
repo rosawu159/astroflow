@@ -67,6 +67,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        with:
+          folder: .vercel/output/static
 
       # Optional Step: Deploy or run tests (if applicable)
       # Uncomment and customize if deploying the site or running tests
