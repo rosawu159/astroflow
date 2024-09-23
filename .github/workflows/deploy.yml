@@ -1,4 +1,4 @@
-name: CI Workflow
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -13,9 +13,8 @@ permissions:
   pages: write
   id-token: write
 
-
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -39,11 +38,31 @@ jobs:
 
       # Step 5: Verify build output
       - name: Verify build output
-        run: ls -la ./dist  # 檢查 dist 資料夾是否存在且包含正確內容
+        run: ls -la ./dist  # 檢查 dist 資料夾是否存在
 
-      # Step 6: Deploy to GitHub Pages
+      # Step 6: Upload the build artifacts
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact  # 確保名稱是 'build-artifact'
+          path: ./dist  # 確保這是正確的靜態網站輸出目錄
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Download build artifacts
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact  # 工件名稱需要與上傳時一致
+
+      # Step 3: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v1
         with:
-          path: ./dist  # 直接指定 dist 資料夾進行部署
+          artifact_name: build-artifact  # 這裡是已上傳的工件名稱
