@@ -8,7 +8,6 @@ import rehypeExternalLinks from 'rehype-external-links'
 import expressiveCode from 'astro-expressive-code'
 import { expressiveCodeOptions } from './src/site.config'
 import icon from 'astro-icon'
-import staticSite from '@astrojs/static-site';
 
 // https://astro.build/config
 export default defineConfig({
