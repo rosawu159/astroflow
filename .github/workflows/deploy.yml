@@ -32,6 +32,12 @@ jobs:
 
       - name: Build Astro project
         run: npm run build
+        
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: ./dist  # Astro 預設的輸出目錄是 dist
 
   deploy:
     needs: build
@@ -40,6 +46,17 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Step 6: Checkout the repository (required in deploy job)
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 7: Download the build artifacts
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+
+      # Step 8: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
