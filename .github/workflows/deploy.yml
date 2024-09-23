@@ -19,29 +19,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout your repository using git
         uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'  # Specify the version of Node.js to use
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Astro project
-        run: npm run build
-        
-      # Step 5: Verify if ./dist folder exists
-      - name: Verify build output
-        run: ls -la ./dist  # 檢查 dist 資料夾是否存在並顯示其內容
-      
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifact
-          path: ./dist  # Astro 預設的輸出目錄是 dist
+      - name: Install, build, and upload your site
+        uses: withastro/action@v0
 
   deploy:
     needs: build
