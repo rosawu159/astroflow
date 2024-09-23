@@ -15,7 +15,7 @@ permissions:
 
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,49 +36,14 @@ jobs:
       # Step 4: Build the Astro project for production
       - name: Build Astro project
         run: npm run build
-        
+
+      # Step 5: Verify build output
       - name: Verify build output
-        run: ls -la ./dist  # 檢查 dist 資料夾是否存在並顯示其內容
-        
-      # Step 6: Upload the build artifacts
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifact
-          path: ./dist  # 確認 dist 資料夾是正確的輸出目錄
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      # Step 6: Checkout the repository (required in deploy job)
-      - name: Checkout repository
-        uses: actions/checkout@v3
+        run: ls -la ./dist  # 檢查 dist 資料夾是否存在且包含正確內容
 
-      # Step 7: Download the build artifacts
-      - name: Download build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: build-artifact
-
-      # Step 3: Verify the content of the downloaded artifact (for debugging)
-      - name: Verify artifact content
-        run: ls -la ./  # 查看当前目录结构
-  
-      # Step 4: Deploy to GitHub Pages
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
         with:
-          path: ./  # 指定包含静态文件的路径，通常是根目录下的静态文件
-
-
-      # Optional Step: Deploy or run tests (if applicable)
-      # Uncomment and customize if deploying the site or running tests
-      # - name: Run tests
-      #   run: npm test
-
-      # - name: Deploy to a service (e.g., Netlify, Vercel)
-      #   run: npm run deploy  # Customize based on your deployment needs
+          path: ./dist  # 直接指定 dist 資料夾進行部署
