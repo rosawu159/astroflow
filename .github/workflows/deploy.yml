@@ -27,11 +27,8 @@ jobs:
       - name: Build Astro project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # Astro 默認的建置目錄
+       - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
 
       # Optional Step: Deploy or run tests (if applicable)
       # Uncomment and customize if deploying the site or running tests
