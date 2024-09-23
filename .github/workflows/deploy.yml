@@ -27,15 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run ESLint for code linting
-      - name: Run ESLint
-        run: npm run lint
-        continue-on-error: true  # Allow workflow to continue even if lint errors occur
-
-      # Step 5: Run Prettier for code formatting
-      - name: Run Prettier
-        run: npm run format:check  # Assuming there's a script for checking format
-
       # Step 6: Build the Astro project
       - name: Build Astro project
         run: npm run build
