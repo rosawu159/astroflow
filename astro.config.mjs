@@ -21,7 +21,8 @@ export default defineConfig({
 		}),
 		sitemap(),
 		mdx(),
-		icon()
+		icon(),
+		staticSite()
 	],
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
