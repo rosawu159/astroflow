@@ -3,13 +3,13 @@
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
+		"format:check": "prettier --check .",
+    		"format:fix": "prettier --write .",
 		"dev": "astro check --watch & astro dev",
 		"start": "astro dev",
 		"build": "astro check && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-   		"format:check": "prettier --check .",
-    		"format:fix": "prettier --write .",
 		"lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,svelte,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,svelte,astro}\""
 	},
 	"dependencies": {
