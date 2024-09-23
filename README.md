@@ -63,7 +63,6 @@ To edit page components found site-wide such as the card used in the homepage, e
 ### Layouts
 
 To edit the base layouts of all pages, edit the `src/layouts/BaseLayout.astro` file.
-
 To edit the layout of a blog article, edit the `src/layouts/BlogPost.astro` file.
 
 ### Blog content
