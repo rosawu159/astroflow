@@ -33,9 +33,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install dependencies
-        run: npm install @astrojs/static-site
-
       # Step 4: Build the Astro project for production
       - name: Build Astro project
         run: npm run build
