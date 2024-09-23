@@ -37,19 +37,40 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 			<div class='flex flex-col items-center gap-y-4'>
 				<h1 class='text-3xl  font-bold'>Y. Wu</h1>
-				<a
-					href='https://github.com/srleom/astro-theme-resume.git'
-					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
-				>
-					<span class='relative flex items-center justify-center'>
-						<span
-							class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-						></span>
-						<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
-					</span>
-
-					<p class='font-medium'>Get free template</p>
-				</a>
+				<div class="flex flex-col items-start gap-y-3 rounded-3xl border border-input px-4 py-4 text-sm shadow-sm transition-all hover:shadow-md">
+					<div class="flex items-center gap-x-2">
+						<span class="relative flex items-center justify-center mr-1">
+							<span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
+							<span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+						</span>
+						<p class="font-medium">Full-stack developer in Python, C#, React.js, and Angular.</p>
+					</div>
+					<div class="flex items-center gap-x-2">
+						<span class="relative flex items-center justify-center mr-1">
+							<span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
+							<span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+						</span>
+						<p class="font-medium">4 years of Web backend development experience.</p>
+					</div>
+					<div class="flex items-center gap-x-2">
+						<span class="relative flex items-center justify-center mr-1">
+							<span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
+							<span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+						</span>
+						<p class="font-medium">2 years of Web frontend development experience.</p>
+					</div>
+					<div class="flex items-center gap-x-2">
+						<span class="relative flex items-center justify-center mr-1">
+							<span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75"></span>
+							<span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+						</span>
+						<p class="font-medium">
+							Active practitioner in tech communities, such as Cloud Native's<br> 
+							glossary and Women in Data Science Taipei.
+						</p>					
+						</div>
+				</div>
+				
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
 					<Label title='Software Engineer | Fullstack Engineer'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
@@ -120,28 +141,63 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='Experience'>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
+				heading='Software Engineer @ Viverse'
+				date='Jun 2023 - Now (1yr 4mos)'
+				subheading='Product developer in cloud-based 3D modeling platform team, involved in Metaverse-related projects that validated business hypothesis at the early stage.'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
 					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
+						Supported teams in improving development productivity and system reliability by designing and
+						developing an automation tool. It was built on Pytest with the Factory Method Pattern and
+						achieved 80% coverage in critical functionalities.
+					</li>
+					<li>
+						Highly collaborated with product teams to deliver Web application features in customer-facing
+						management platform (Next.js). In addition to feature development, my main contributions included 
+						supporting i18n and integrating Axios API layer with React Hooks.
 					</li>
 				</ul>
 			</Card>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
+				heading='Software Engineer @ Adecco'
+				subheading='Full Stack Engineer in a mobile hardware division, involved in developing multithreading systems, SQL processing, and UI components that facilitated rapid iterations and timely product launch.'
+				date='Aug 2021 - Mar 2023 (1yr 9mons)'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
-			/>
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+						Implemented event-driven automation solutions focused on parallel system architectures to
+						manage complex multithreading and multiprocessing test environments. Lead to a 20%
+						improvement in coverage and more resilient software performance.
+					</li>
+					<li>
+						Continuous communication with stakeholders to clarify requirements, managing team
+						members, and triaging issues throughout the testing lifecycle.
+					</li>
+				</ul>
+			</Card>
+			<Card
+				heading='Software Engineer @ Micron'
+				subheading='Software Engineer in a customer-focused semiconductor team, delivered stakeholder services on a bi-weekly agile basis and improved business logic efficiency.'
+				date='Sep 2019 - Mar 2021 (1yr 7mons)'
+				altText='Lorem, ipsum dolor sit'
+				imageClass='h-12 w-auto md:-left-16'
+				>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+						Achieved significant cost reduction for internal team collaboration through migrating
+						application from existing MVC razor to Angular with reusable typescript components and the
+						service with consumed API by .NET Core3 and deploy to Openshift as docker application.
+					</li>
+					<li>
+						Continuously evaluated and optimized hybrid ETL delivery and support using .NET Core, .NET
+						Framework, Microsoft SSIS, and MSSQL database objects.
+					</li>
+				</ul>
+			</Card>
 		</Section>
 
 		<Section title='Education'>
@@ -163,10 +219,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		<Section title='Projects'>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
-					href='https://www.google.com'
-					heading='Consectetur'
-					subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-					imagePath='/src/assets/coming-soon.png'
+					href='https://docs.google.com/presentation/d/1wsR124C4zOs_dvJ6eyEDwuubo56k0Wj-cR4_NHP2s4g/pub?start=false&loop=false&delayms=3000'
+					heading='Containerized CI Automation'
+					subheading='Leveraging Containers to Streamline Continuous Integration'
+					imagePath='/src/assets/ci_automation.png'
 					altText='Example'
 					class='w-full sm:w-1/2'
 				/>
@@ -184,21 +240,21 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		<Section title='Certifications'>
 			<Card
 				as='a'
-				heading='Lorem ipsum, dolor sit amet consectetur adipisicing.'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta magni consequuntur corrupti.'
-				date='Mar 2024 - Mar 2024'
+				heading='Information Visualization Specialization'
+				subheading='New York University'
+				date='Mar 2023'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-11 w-auto md:-left-16'
-				href='https://www.google.com'
+				href='https://coursera.org/share/1a0b5aa71fdc9ca1d48bc02156ca88c3'
 			/>
 			<Card
 				as='a'
-				heading='Lorem ipsum, dolor sit amet'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta.'
-				date='Mar 2029 - Mar 2032'
+				heading='Foundations of User Experience (UX) Design'
+				subheading='Google'
+				date='Mar 2022'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-11 w-auto md:-left-16'
-				href='https://www.google.com'
+				href='https://www.coursera.org/account/accomplishments/certificate/4WQR6LW8LPPV'
 			/>
 		</Section>
 
@@ -211,17 +267,4 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<SkillLayout title='IaC & CI/CD' skills={iac_cicd} />
 		</Section>
 	</div>
-	<a
-		href='https://github.com/srleom/astro-theme-resume.git'
-		class='mt-16 flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
-	>
-		<span class='relative flex items-center justify-center'>
-			<span
-				class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-			></span>
-			<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
-		</span>
-
-		<p class='font-medium'>Get free template</p>
-	</a>
 </PageLayout>
