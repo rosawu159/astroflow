@@ -63,10 +63,16 @@ jobs:
         with:
           name: build-artifact
 
-      # Step 8: Deploy to GitHub Pages
+      # Step 3: Verify the content of the downloaded artifact (for debugging)
+      - name: Verify artifact content
+        run: ls -la ./  # 查看当前目录结构
+  
+      # Step 4: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        with:
+          path: ./  # 指定包含静态文件的路径，通常是根目录下的静态文件
 
 
       # Optional Step: Deploy or run tests (if applicable)
