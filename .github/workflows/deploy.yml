@@ -1,21 +1,49 @@
-name: GitHub Actions
+name: CI Workflow
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-  push:
+  pull_request:
     branches:
       - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v4
 
-  check:
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Specify the version of Node.js to use
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run ESLint for code linting
+      - name: Run ESLint
+        run: npm run lint
+        continue-on-error: true  # Allow workflow to continue even if lint errors occur
+
+      # Step 5: Run Prettier for code formatting
+      - name: Run Prettier
+        run: npm run format:check  # Assuming there's a script for checking format
+
+      # Step 6: Build the Astro project
+      - name: Build Astro project
+        run: npm run build
+
+      # Optional Step: Deploy or run tests (if applicable)
+      # Uncomment and customize if deploying the site or running tests
+      # - name: Run tests
+      #   run: npm test
+
+      # - name: Deploy to a service (e.g., Netlify, Vercel)
+      #   run: npm run deploy  # Customize based on your deployment needs
