@@ -21,7 +21,7 @@ target = num + 另一個數字
 另一個數字 = target - num = complement
 ```
 
-找什麼就把什麼放key 
+基於字典的查詢方法是：**找什麼就把什麼放key**
 
 → 因為要在遍歷過的num中，尋找complement 
 
