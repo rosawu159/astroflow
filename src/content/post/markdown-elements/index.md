@@ -23,11 +23,12 @@ target = num + 另一個數字
 
 找什麼就把什麼放key 
 
--> 因為要在遍歷過的num中，尋找complement 
+→ 因為要在遍歷過的num中，尋找complement 
 
--> 把num放key
+→ 把num放key
 
 ## 資料結構
 
 Key：數字 num（方便快速查找）。
+
 Value：索引 index（方便在找到 complement 時快速返回索引值）。
