@@ -29,6 +29,6 @@ target = num + 另一個數字
 
 ## 資料結構
 
-Key：數字 num（方便快速查找）。
+Key：數字 num（方便快速查找跟 complement 一樣的num）
 
-Value：索引 index（方便在找到 complement 時快速返回索引值）。
+Value：索引 index（方便在找到 complement 時快速返回索引值）
