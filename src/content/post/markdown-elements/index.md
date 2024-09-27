@@ -23,7 +23,7 @@ target = num + 另一個數字
 
 找什麼就把什麼放key 
 
--> 因為要確認complement是否有match的num 
+-> 因為要在遍歷過的num中，尋找complement 
 
 -> 把num放key
 
