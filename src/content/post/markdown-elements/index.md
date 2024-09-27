@@ -23,9 +23,9 @@ target = num + 另一個數字
 
 解題思路：找什麼就把什麼放key
 
-  → 因為要找有沒有num是跟complement可以match到的
+→ 因為要找有沒有num是跟complement可以match到的
   
-  → 把num放key
+→ 把num放key
 
 ## 資料結構
 
