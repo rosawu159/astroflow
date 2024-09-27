@@ -21,7 +21,11 @@ target = num + 另一個數字
 另一個數字 = target - num = complement
 ```
 
-找什麼就把什麼放key -> 找complement -> 把num放key
+找什麼就把什麼放key 
+
+-> 因為要確認complement是否有match的num 
+
+-> 把num放key
 
 ## 資料結構
 
