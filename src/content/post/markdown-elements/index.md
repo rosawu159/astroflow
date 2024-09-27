@@ -2,7 +2,6 @@
 title: "Two Sum"
 description: "This post is for leetcode practice"
 publishDate: "22 Feb 2023"
-updatedDate: 22 Jan 2024
 tags: ["leetcode", "array"]
 ---
 
