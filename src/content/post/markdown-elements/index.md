@@ -1,6 +1,6 @@
 ---
 title: "Two Sum"
-description: "This post is for testing and listing a number of different markdown elements"
+description: "This post is for leetcode"
 publishDate: "22 Feb 2023"
 updatedDate: 22 Jan 2024
 tags: ["test", "leetcode"]
@@ -21,9 +21,14 @@ target = num + 另一個數字
 另一個數字 = target - num = complement
 ```
 
-找什麼就把什麼放key -> 找complement -> 把num放key
+解題思路：找什麼就把什麼放key
+
+  → 因為要找有沒有num是跟complement可以match到的
+  
+  → 把num放key
 
 ## 資料結構
 
-Key：數字 num（方便快速查找）。
-Value：索引 index（方便在找到 complement 時快速返回索引值）。
+Key：數字 num（方便快速查找）
+
+Value：索引 index（方便在找到 complement 時快速返回索引值）
